@@ -1,0 +1,209 @@
+:root {
+  --glow-ink: #211d1f;
+  --glow-muted: #756a6d;
+  --glow-pink: #e67b8e;
+  --glow-pink-soft: #fcebef;
+  --glow-cream: #fff9f7;
+  --glow-line: #22a640;
+  --glow-surface: #ffffff;
+  --glow-border: rgba(230, 123, 142, 0.28);
+  --glow-shadow: 0 18px 50px rgba(118, 77, 87, 0.16);
+  --bottom-cta-height: 82px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.92), transparent 32rem),
+    linear-gradient(180deg, #fff7f8 0%, #f9eef0 45%, #fff9f7 100%);
+  color: var(--glow-ink);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
+  line-height: 1.8;
+  padding-bottom: calc(var(--bottom-cta-height) + env(safe-area-inset-bottom));
+}
+
+a {
+  color: inherit;
+}
+
+.lp-shell {
+  width: min(100%, 480px);
+  margin: 0 auto;
+  background: var(--glow-surface);
+  box-shadow: var(--glow-shadow);
+}
+
+.visual-section {
+  margin: 0;
+  background: var(--glow-surface);
+}
+
+.visual-section picture,
+.visual-section img {
+  display: block;
+  width: 100%;
+}
+
+.visual-section img {
+  height: auto;
+}
+
+.text-panel {
+  padding: 30px 24px 28px;
+  background: linear-gradient(180deg, #fff 0%, var(--glow-cream) 100%);
+  border-top: 1px solid var(--glow-border);
+}
+
+.text-panel h2 {
+  margin: 0 0 14px;
+  color: var(--glow-ink);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.text-panel p {
+  margin: 0;
+  color: var(--glow-muted);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.9;
+}
+
+.text-panel p + p {
+  margin-top: 12px;
+}
+
+.site-footer {
+  padding: 26px 22px 34px;
+  background: #fff;
+  border-top: 1px solid rgba(33, 29, 31, 0.08);
+  color: var(--glow-muted);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: 12px;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer .brand {
+  margin-bottom: 7px;
+  color: var(--glow-ink);
+  font-family: "Times New Roman", "Yu Mincho", serif;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.site-footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.site-footer a {
+  text-underline-offset: 4px;
+}
+
+.sticky-cta {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 10px;
+  width: min(100%, 480px);
+  min-height: var(--bottom-cta-height);
+  margin: 0 auto;
+  padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.92);
+  border-top: 1px solid rgba(230, 123, 142, 0.24);
+  box-shadow: 0 -12px 32px rgba(118, 77, 87, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+.sticky-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 52px;
+  padding: 12px 10px;
+  border-radius: 999px;
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.sticky-cta__button:hover,
+.sticky-cta__button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.sticky-cta__button--line {
+  background: linear-gradient(135deg, #45bd58 0%, var(--glow-line) 100%);
+  box-shadow: 0 10px 22px rgba(34, 166, 64, 0.22);
+  color: #fff;
+}
+
+.sticky-cta__button--phone {
+  background: #fff;
+  border: 1px solid rgba(230, 123, 142, 0.32);
+  box-shadow: 0 10px 22px rgba(118, 77, 87, 0.12);
+  color: var(--glow-ink);
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (min-width: 760px) {
+  body {
+    padding-top: 28px;
+    padding-bottom: calc(var(--bottom-cta-height) + 32px);
+  }
+
+  .lp-shell,
+  .sticky-cta {
+    border-radius: 18px;
+  }
+
+  .lp-shell {
+    overflow: hidden;
+  }
+
+  .sticky-cta {
+    bottom: 18px;
+  }
+}
